@@ -1,0 +1,36 @@
+extends layout
+
+block head
+	title Passwordless - Detailed implementation guideline
+	meta(name='description', content='Learn how to better integrate Passwordless into your express / node.js web app for example by offering several authentication strategies')
+
+block content
+	section.row
+		aside.large-2.column.first
+			ul.side-nav
+				li
+					a(href='#logout') Logout
+				li
+					a(href='#redirects') Redirects
+				li
+					a(href='#error-flashes') Error flashes
+				li
+					a(href='#success-flashes') Success flashes
+				li
+					a(href='#2-step-authentication-e-g-for-sms-') 2-step auth
+				li
+					a(href='#successful-login-and-redirect-to-origin') Redirect to origin
+				li
+					a(href='#several-delivery-strategies') Several delivery strategies
+				li
+					a(href='#modify-lifetime-of-a-token') Lifetime of a token
+				li
+					a(href='#allow-token-reuse') Allow token reuse
+				li
+					a(href='#different-tokens') Different tokens
+				li
+					a(href='#stateless-operation') Stateless operation
+						
+		section.large-10.column
+			h2.first Deep dive
+			include content/deepdive.html

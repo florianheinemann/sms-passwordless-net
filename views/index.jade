@@ -1,0 +1,37 @@
+extends layout
+
+block head
+	title Passwordless - A node.js/express module for token-based logins
+	meta(name='description', content='Token-based authentication middleware for Express & Node.js to replace passwords. One-time passwords (OTPW) delivered via mail or SMS')
+
+block content
+	section.panel
+		div.row
+			section.large-8.large-centered.columns
+				if error
+					div.alert-box.alert(data-alert)= error
+						a.close(href='#') &times;
+				if success
+					div.alert-box.success(data-alert)= success
+						a.close(href='#') &times;
+				header
+					h1.text-center.first Passwordless
+					h3.subheader.text-center Token-based authentication middleware for Express &amp; Node.js 
+					p
+						code $ npm install passwordless --save
+					p Passwords are broken. Inspired by 
+						a(href='http://twitter.com/ninjudd') Justin Balthrop's 
+						| article 
+						cite 
+							a(href='https://medium.com/@ninjudd/passwords-are-obsolete-9ed56d483eb') Passwords are Obsolete
+						|  token-based one-time password (OTPW) authentication is faster to deploy, better for your users, 
+						| and more secure.
+					if !user
+						p.text-center
+							a.button.small(href='/account/login') Give it a try!
+					else
+						p.text-center
+							a.button.small(href='/account/logout') Logout &amp; try again!
+	section.row
+		div.large-8.large-centered.columns
+			include content/index.html

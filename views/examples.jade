@@ -1,0 +1,17 @@
+extends layout
+
+block head
+	title Passwordless - Examples
+	meta(name='description', content='Demo applications for Passwordless, a token-based authentication module for node.js/express')
+
+block content
+	section.row
+		div.large-8.large-centered.columns
+			if error
+				div.alert-box.alert(data-alert)= error
+					a.close(href='#') &times;
+			if success
+				div.alert-box.success(data-alert)= success
+					a.close(href='#') &times;
+			h2.first Examples
+			include content/examples.html
